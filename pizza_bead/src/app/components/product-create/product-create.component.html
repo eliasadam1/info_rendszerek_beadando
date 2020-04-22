@@ -1,0 +1,45 @@
+<mat-card class="menucard">
+  <mat-card-content>
+      <h2 class="title">Termék hozzáadása</h2>
+      <button mat-raised-button routerLinkActive="active" routerLink="/product-list" class="menubtn">Termékek</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/customer-create" class="menubtn">Vevő hozzáadás</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/customer-list" class="menubtn">Vevők</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/cart" class="menubtn">Kosár</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/order" class="menubtn">Rendelések</button>
+</mat-card-content>
+</mat-card>
+
+
+<mat-card class="card">
+  <h2 class="title">Új termék</h2>
+  <mat-card-content>
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit()" class="form" >
+
+    <mat-form-field >
+      <input matInput type="text" placeholder="Termék neve" formControlName="name">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field >
+      <input matInput  placeholder="Méret" type="text"  formControlName="size">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field >
+      <input matInput  placeholder="Leírás" type="text" formControlName="describe">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput  placeholder="Sütési idő" type="text" formControlName="cook">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput  placeholder="Ára" type="text" formControlName="cost">
+    </mat-form-field>
+    <br>
+
+    <button color="primary" mat-raised-button type="submit"  class="submit" >Hozzáad</button>
+
+  </form>
+</mat-card-content>
+</mat-card>

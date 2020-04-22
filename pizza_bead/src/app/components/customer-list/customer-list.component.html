@@ -1,0 +1,26 @@
+<mat-card class="menucard">
+  <mat-card-content>
+      <h2 class="title">Vevők listája</h2>
+      <button mat-raised-button routerLinkActive="active" routerLink="/product-create" class="menubtn">Termék hozzáadás</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/product-list" class="menubtn">Termékek</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/customer-create" class="menubtn">Vevő hozzáadás</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/cart" class="menubtn">Kosár</button>
+      <button mat-raised-button routerLinkActive="active" routerLink="/order" class="menubtn">Rendelések</button>
+</mat-card-content>
+</mat-card>
+
+
+<mat-sidenav-container class="sidenav">
+<div class="list">
+  <mat-card class="cardlist" *ngFor="let customer of Customers; let i= index">
+    <mat-card-title class="title">
+      {{customer.name}}
+    </mat-card-title>
+    <mat-card-content >
+      <div> Felhasználónév: {{customer.username}} </div>
+      <div> Cím: {{customer.address}}  </div>
+      <div> Telefonszám: {{customer.phone}}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
+</mat-sidenav-container>
